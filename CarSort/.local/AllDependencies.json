@@ -1065,9 +1065,9 @@
     "restore": {
       "projectUniqueName": "CarSort",
       "projectName": "CarSort",
-      "projectPath": "C:\\Users\\Major League Hacking\\Desktop\\UIPath\\CarSort\\.local",
+      "projectPath": "C:\\Users\\Major League Hacking\\Desktop\\UIPath\\CarSort-App\\CarSort\\.local",
       "packagesPath": "C:\\Users\\Major League Hacking\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Major League Hacking\\Desktop\\UIPath\\CarSort\\.local"
+      "outputPath": "C:\\Users\\Major League Hacking\\Desktop\\UIPath\\CarSort-App\\CarSort\\.local"
     },
     "frameworks": {
       "net461": {
@@ -1095,35 +1095,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Humanizer.Core 2.4.2' from source 'C:\\Users\\Major League Hacking\\AppData\\Local\\UiPath\\app-19.6.0\\Packages': This package is signed but not by a trusted signer.",
-      "libraryId": "Humanizer.Core"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Extended.Wpf.Toolkit 2.8' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
-      "libraryId": "Extended.Wpf.Toolkit"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.SignalR.Client 2.4.0' from source 'C:\\Users\\Major League Hacking\\AppData\\Local\\UiPath\\app-19.6.0\\Packages': This package is signed but not by a trusted signer.",
-      "libraryId": "Microsoft.AspNet.SignalR.Client"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Rest.ClientRuntime 2.3.20' from source 'C:\\Users\\Major League Hacking\\AppData\\Local\\UiPath\\app-19.6.0\\Packages': This package is signed but not by a trusted signer.",
-      "libraryId": "Microsoft.Rest.ClientRuntime"
-    }
-  ]
+  }
 }
