@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="588.666666666667,826.666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="588.666666666667,1208" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -42,6 +42,8 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -49,7 +51,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="568.666666666667,726.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="568.666666666667,1108" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT" />
     </Sequence.Variables>
@@ -59,30 +61,148 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[DT]" Delimitator="Comma" DisplayName="Read CSV" FilePath="cars.csv" sap:VirtualizedContainerService.HintSize="526.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="526.666666666667,428" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="526.666666666667,917.333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,275.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,764.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="434,183.333333333333" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" NewSession="True" Private="False" Url="www.carguru.com">
+            <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="434,672.666666666667" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" NewSession="True" Private="False" Url="www.carguru.com">
               <ui:OpenBrowser.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,84.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,574" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  carPickerUsed_m...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[DT.Rows(0).Item(0).ToString]">
+                      <ui:SelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="50">
+                          <x:String>All Makes</x:String>
+                          <x:String>Acura</x:String>
+                          <x:String>Alfa Romeo</x:String>
+                          <x:String>Audi</x:String>
+                          <x:String>BMW</x:String>
+                          <x:String>Buick</x:String>
+                          <x:String>Cadillac</x:String>
+                          <x:String>Chevrolet</x:String>
+                          <x:String>Chrysler</x:String>
+                          <x:String>Dodge</x:String>
+                          <x:String>FIAT</x:String>
+                          <x:String>Ford</x:String>
+                          <x:String>Genesis</x:String>
+                          <x:String>GMC</x:String>
+                          <x:String>Honda</x:String>
+                          <x:String>Hyundai</x:String>
+                          <x:String>INFINITI</x:String>
+                          <x:String>Jaguar</x:String>
+                          <x:String>Jeep</x:String>
+                          <x:String>Kia</x:String>
+                          <x:String>Land Rover</x:String>
+                          <x:String>Lexus</x:String>
+                          <x:String>Lincoln</x:String>
+                          <x:String>Maserati</x:String>
+                          <x:String>Mazda</x:String>
+                          <x:String>Mercedes-Benz</x:String>
+                          <x:String>MINI</x:String>
+                          <x:String>Mitsubishi</x:String>
+                          <x:String>Nissan</x:String>
+                          <x:String>Pontiac</x:String>
+                          <x:String>Porsche</x:String>
+                          <x:String>RAM</x:String>
+                          <x:String>Scion</x:String>
+                          <x:String>Subaru</x:String>
+                          <x:String>Toyota</x:String>
+                          <x:String>Volkswagen</x:String>
+                          <x:String>Volvo</x:String>
+                          <x:String>Acura</x:String>
+                          <x:String>Alfa Romeo</x:String>
+                          <x:String>AM General</x:String>
+                          <x:String>AMC</x:String>
+                          <x:String>Ariel</x:String>
+                          <x:String>Aston Martin</x:String>
+                          <x:String>Auburn</x:String>
+                          <x:String>Audi</x:String>
+                          <x:String>Austin</x:String>
+                          <x:String>Austin-Healey</x:String>
+                          <x:String>Bentley</x:String>
+                          <x:String>BMW</x:String>
+                          <x:String>Bricklin</x:String>
+                        </scg:List>
+                      </ui:SelectItem.Items>
+                      <ui:SelectItem.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="27346a1219c6cade4d455f322e278d39" Selector="&lt;webctrl id='carPickerUsed_makerSelect' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:SelectItem.Target>
+                    </ui:SelectItem>
+                    <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  carPickerUsed_m...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[DT.Rows(0).Item(1).ToString]">
+                      <ui:SelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="64">
+                          <x:String>All Models</x:String>
+                          <x:String>300ZX</x:String>
+                          <x:String>350Z</x:String>
+                          <x:String>370Z</x:String>
+                          <x:String>Altima</x:String>
+                          <x:String>Altima Coupe</x:String>
+                          <x:String>Armada</x:String>
+                          <x:String>Cube</x:String>
+                          <x:String>Frontier</x:String>
+                          <x:String>GT-R</x:String>
+                          <x:String>Juke</x:String>
+                          <x:String>Kicks</x:String>
+                          <x:String>LEAF</x:String>
+                          <x:String>Maxima</x:String>
+                          <x:String>Murano</x:String>
+                          <x:String>NV Cargo</x:String>
+                          <x:String>NV Passenger</x:String>
+                          <x:String>NV200</x:String>
+                          <x:String>Pathfinder</x:String>
+                          <x:String>Quest</x:String>
+                          <x:String>Rogue</x:String>
+                          <x:String>Rogue Hybrid</x:String>
+                          <x:String>Rogue Select</x:String>
+                          <x:String>Rogue Sport</x:String>
+                          <x:String>Sentra</x:String>
+                          <x:String>Titan</x:String>
+                          <x:String>Versa</x:String>
+                          <x:String>Versa Note</x:String>
+                          <x:String>Xterra</x:String>
+                          <x:String>200SX</x:String>
+                          <x:String>240SX</x:String>
+                          <x:String>280ZX</x:String>
+                          <x:String>Altima Hybrid</x:String>
+                          <x:String>Cedric</x:String>
+                          <x:String>Murano CrossCabriolet</x:String>
+                          <x:String>Murano Hybrid</x:String>
+                          <x:String>NX</x:String>
+                          <x:String>Pathfinder Hybrid</x:String>
+                          <x:String>Patrol</x:String>
+                          <x:String>Pickup</x:String>
+                          <x:String>Pulsar</x:String>
+                          <x:String>Silvia</x:String>
+                          <x:String>Skyline</x:String>
+                          <x:String>Sunny</x:String>
+                          <x:String>Truck</x:String>
+                        </scg:List>
+                      </ui:SelectItem.Items>
+                      <ui:SelectItem.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1aa58c0265e33e9a64e6a82e44e0baf0" Selector="&lt;webctrl id='carPickerUsed_modelSelect' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:SelectItem.Target>
+                    </ui:SelectItem>
+                    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  dealFinderZipUse...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[DT.Rows(0).Item(2).ToString]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6ce08787b625aa3c4042cc501096c098" Selector="&lt;webctrl id='dealFinderZipUsedId_dealFinderForm' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
                   </Sequence>
                 </ActivityAction>
               </ui:OpenBrowser.Body>
@@ -91,10 +211,5 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:ExtractData DataTable="{x:Null}" ExtractMetadata="{x:Null}" NextLinkSelector="{x:Null}" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data" sap:VirtualizedContainerService.HintSize="526.666666666667,68" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100">
-      <ui:ExtractData.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
-      </ui:ExtractData.Target>
-    </ui:ExtractData>
   </Sequence>
 </Activity>
